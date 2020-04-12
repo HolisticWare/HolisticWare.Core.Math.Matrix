@@ -1,0 +1,3 @@
+﻿namespace Core.Math.Matrix
+{
+}
