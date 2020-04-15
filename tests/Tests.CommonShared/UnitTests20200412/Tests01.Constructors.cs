@@ -96,7 +96,7 @@ namespace UnitTests.Core.Math.Core.Math.Matrix
             Vector<double> v = new Vector<double>(3.14);
 
             // TODO: ToString() as C# string
-            // @body: return string that can be copy/paste-d to code as valid C#
+            // BODY: return string that can be copy/paste-d to code as valid C#
             string sv = v.ToString();
 
             Console.WriteLine($" v = {sv}");
