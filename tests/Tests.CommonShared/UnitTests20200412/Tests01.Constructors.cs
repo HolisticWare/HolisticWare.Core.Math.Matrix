@@ -122,7 +122,7 @@ namespace UnitTests.Core.Math.Core.Math.Matrix
             Vector<int> v1 = new Vector<int> { 2, 3 };
             Vector<int> v2 = new Vector<int> { 4, 4 };
 
-            Vector<int> vr = Vector<int>.Add(v1, v2);
+            Vector<int> vr = v1 + v2; 
 
             string sv = vr.ToString();
 
@@ -137,14 +137,12 @@ namespace UnitTests.Core.Math.Core.Math.Matrix
             Vector<int> v1 = new Vector<int> { 2, 3, 5};
             Vector<int> v2 = new Vector<int> { 4, 4 };
 
-            Vector<int> vr = null;
-
             #if NUNIT && NUNIT_LITE
             Assert.Throws<InvalidOperationException>
             (
                 () =>
                 {
-                    vr = Vector<int>.Add(v1, v2);
+                    Vector<int> vr = v1 + v2;
                     string sv = vr.ToString();
 
                     Console.WriteLine($" v = {sv}");
