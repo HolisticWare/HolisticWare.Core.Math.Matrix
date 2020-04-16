@@ -115,5 +115,45 @@ namespace UnitTests.Core.Math.Core.Math.Matrix
 
             return;
         }
+
+        [Test]
+        public void Vector_Operations_Algebra_Addition_01()
+        {
+            Vector<int> v1 = new Vector<int> { 2, 3 };
+            Vector<int> v2 = new Vector<int> { 4, 4 };
+
+            Vector<int> vr = Vector<int>.Add(v1, v2);
+
+            string sv = vr.ToString();
+
+            Console.WriteLine($" v = {sv}");
+
+            return;
+        }
+
+        [Test]
+        public void Vector_Operations_Algebra_Addition_02()
+        {
+            Vector<int> v1 = new Vector<int> { 2, 3, 5};
+            Vector<int> v2 = new Vector<int> { 4, 4 };
+
+            Vector<int> vr = null;
+
+            #if NUNIT && NUNIT_LITE
+            Assert.Throws<InvalidOperationException>
+            (
+                () =>
+                {
+                    vr = Vector<int>.Add(v1, v2);
+                    string sv = vr.ToString();
+
+                    Console.WriteLine($" v = {sv}");
+                }
+            );
+            #endif
+
+
+            return;
+        }
     }
 }
