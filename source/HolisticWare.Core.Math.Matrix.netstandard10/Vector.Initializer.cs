@@ -17,9 +17,18 @@ namespace Core.Math.Matrix
             return this.GetEnumerator();
         }
 
+
+        List<T> data_initializer = new List<T>();
+
         public void Add(T value)
         {
-            List<T> data_temp = new List<T>(data);
+            if (data_initializer == null)
+            {
+                data_initializer = new List<T>();
+            }
+            data_initializer.Add(value);
+
+            data = data_initializer.ToArray();
 
             return;
         }
