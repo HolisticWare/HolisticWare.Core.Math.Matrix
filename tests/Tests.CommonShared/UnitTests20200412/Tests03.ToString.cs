@@ -78,7 +78,7 @@ namespace UnitTests.Core.Math.Core.Math.Matrix
     public partial class UnitTests20200412
     {
         [Test]
-        public void Vector_Operations_Algebra_Addition_01()
+        public void Vector_ToString_CSharp()
         {
             Vector<int> v1 = new Vector<int> { 2, 3 };
             Vector<int> v2 = new Vector<int> { 4, 4 };
@@ -89,28 +89,50 @@ namespace UnitTests.Core.Math.Core.Math.Matrix
 
             Console.WriteLine($" v = {sv}");
 
+            #if NUNIT || NUNIT_LITE
+            #elif XUNIT
+            #elif MSTEST
+            #endif
+
             return;
         }
 
         [Test]
-        public void Vector_Operations_Algebra_Addition_02()
+        public void Vector_ToString_CSV()
         {
-            Vector<int> v1 = new Vector<int> { 2, 3, 5};
+            Vector<int> v1 = new Vector<int> { 2, 3 };
             Vector<int> v2 = new Vector<int> { 4, 4 };
 
-            #if NUNIT && NUNIT_LITE
-            Assert.Throws<InvalidOperationException>
-            (
-                () =>
-                {
-                    Vector<int> vr = v1 + v2;
-                    string sv = vr.ToString();
+            Vector<int> vr = v1 + v2;
 
-                    Console.WriteLine($" v = {sv}");
-                }
-            );
+            string sv = vr.ToString();
+
+            Console.WriteLine($" v = {sv}");
+
+            #if NUNIT || NUNIT_LITE
+            #elif XUNIT
+            #elif MSTEST
             #endif
 
+            return;
+        }
+
+        [Test]
+        public void Vector_ToString_JSON()
+        {
+            Vector<int> v1 = new Vector<int> { 2, 3 };
+            Vector<int> v2 = new Vector<int> { 4, 4 };
+
+            Vector<int> vr = v1 + v2;
+
+            string sv = vr.ToString();
+
+            Console.WriteLine($" v = {sv}");
+
+            #if NUNIT || NUNIT_LITE
+            #elif XUNIT
+            #elif MSTEST
+            #endif
 
             return;
         }

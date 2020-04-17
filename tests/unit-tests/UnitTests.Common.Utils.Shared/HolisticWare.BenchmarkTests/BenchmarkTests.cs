@@ -57,11 +57,17 @@ using Fact = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
 
 namespace HolisticWare.Core.Testing.BenchmarkTests
 {
+    /// <summary>
+    /// Benchmark Attribute
+    /// </summary>
     public class Benchmark : Attribute
     {
         
     }
 
+    /// <summary>
+    /// ShortRunJob Attribute
+    /// </summary>
     public class ShortRunJob : Attribute
     {
 
