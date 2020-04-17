@@ -8,28 +8,21 @@ namespace Core.Math.Matrix
     /// https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/operator-overloading#overloadable-operators
     public partial class Vector<T>
     {
-        public static Vector<int> operator+(Vector<T> lhs, Vector<int> rhs)
-        {
+        //-------------------------------------------------------------------------------------------------------------
+        // + int
+        public static Vector<int> operator +(Vector<T> lhs, Vector<int> rhs) {
             return lhs.Add(rhs);
         }
 
-        public static Vector<int> operator +=(Vector<int> rhs)
-        {
-            return this + rhs;
-        }
-
-        public Vector<int> Add(Vector<int> rhs)
-        {
-            if (this.Length != rhs.Length)
-            {
+        public Vector<int> Add(Vector<int> rhs) {
+            if (this.Length != rhs.Length) {
                 throw new System.InvalidOperationException("Vectors must be the same size!");
             }
 
             int length = this.Length;
             int[] tmp_data = new int[length];
 
-            for (int i = 0; i < length; i++)
-            {
+            for (int i = 0; i < length; i++) {
                 int? l = this.Data[i] as int?;
                 int r = rhs.Data[i];
                 tmp_data[i] = r + l.Value;
@@ -40,6 +33,69 @@ namespace Core.Math.Matrix
 
             return vector_result;
         }
-    }
+        //-------------------------------------------------------------------------------------------------------------
 
+        //-------------------------------------------------------------------------------------------------------------
+        // + uint
+        public static Vector<uint> operator+(Vector<T> lhs, Vector<uint> rhs)
+        {
+            return lhs.Add(rhs);
+        }
+
+        public Vector<uint> Add(Vector<uint> rhs)
+        {
+            if (this.Length != rhs.Length)
+            {
+                throw new System.InvalidOperationException("Vectors must be the same size!");
+            }
+
+            int length = this.Length;
+            uint[] tmp_data = new uint[length];
+
+            for (int i = 0; i < length; i++)
+            {
+                uint? l = this.Data[i] as uint?;
+                uint r = rhs.Data[i];
+                tmp_data[i] = r + l.Value;
+            }
+
+            Vector<uint> vector_result = new Vector<uint>(length);
+            vector_result.Data = tmp_data;
+
+            return vector_result;
+        }
+        //-------------------------------------------------------------------------------------------------------------
+
+        //-------------------------------------------------------------------------------------------------------------
+        // + uint
+        public static Vector<double> operator +(Vector<T> lhs, Vector<double> rhs)
+        {
+            return lhs.Add(rhs);
+        }
+
+        public Vector<double> Add(Vector<double> rhs)
+        {
+            if (this.Length != rhs.Length)
+            {
+                throw new System.InvalidOperationException("Vectors must be the same size!");
+            }
+
+            int length = this.Length;
+            double[] tmp_data = new double[length];
+
+            for (int i = 0; i < length; i++)
+            {
+                double? l = this.Data[i] as double?;
+                double r = rhs.Data[i];
+                tmp_data[i] = r + l.Value;
+            }
+
+            Vector<double> vector_result = new Vector<double>(length);
+            vector_result.Data = tmp_data;
+
+            return vector_result;
+        }
+        //-------------------------------------------------------------------------------------------------------------
+
+    }
 }
