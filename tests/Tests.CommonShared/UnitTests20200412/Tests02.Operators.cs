@@ -78,13 +78,14 @@ namespace UnitTests.Core.Math.Core.Math.Matrix
     public partial class UnitTests20200412
     {
         [Test]
-        public void Vector_double_Constructor_Value_Scalar()
+        public void Vector_Operations_Algebra_Addition_01()
         {
-            Vector<double> v = new Vector<double>(3.14);
+            Vector<int> v1 = new Vector<int> { 2, 3 };
+            Vector<int> v2 = new Vector<int> { 4, 4 };
 
-            // TODO: ToString() as C# string
-            // BODY: return string that can be copy/paste-d to code as valid C#
-            string sv = v.ToString();
+            Vector<int> vr = v1 + v2; 
+
+            string sv = vr.ToString();
 
             Console.WriteLine($" v = {sv}");
 
@@ -92,39 +93,24 @@ namespace UnitTests.Core.Math.Core.Math.Matrix
         }
 
         [Test]
-        public void Vector_double_Constructor_Initializer()
+        public void Vector_Operations_Algebra_Addition_02()
         {
-            Vector<double> v = new Vector<double> { 3.14, 3.14 };
+            Vector<int> v1 = new Vector<int> { 2, 3, 5};
+            Vector<int> v2 = new Vector<int> { 4, 4 };
 
-            string sv = v.ToString();
+            #if NUNIT && NUNIT_LITE
+            Assert.Throws<InvalidOperationException>
+            (
+                () =>
+                {
+                    Vector<int> vr = v1 + v2;
+                    string sv = vr.ToString();
 
-            Console.WriteLine($" v = {sv}");
+                    Console.WriteLine($" v = {sv}");
+                }
+            );
+            #endif
 
-            return;
-        }
-
-        [Test]
-        public void Vector_int_Constructor_Value_Scalar()
-        {
-            Vector<int> v = new Vector<int>(42);
-
-            // TODO: ToString() as C# string
-            // BODY: return string that can be copy/paste-d to code as valid C#
-            string sv = v.ToString();
-
-            Console.WriteLine($" v = {sv}");
-
-            return;
-        }
-
-        [Test]
-        public void Vector_int_Constructor_Initializer()
-        {
-            Vector<int> v = new Vector<int> { 42, 42 };
-
-            string sv = v.ToString();
-
-            Console.WriteLine($" v = {sv}");
 
             return;
         }
