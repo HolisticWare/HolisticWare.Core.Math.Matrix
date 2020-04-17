@@ -12,5 +12,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)UnitTests20200412\Tests00.Data.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UnitTests20200412\Tests01.Constructors.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UnitTests20200412\Tests02.Operators.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UnitTests20200412\Tests03.ToString.cs" />
   </ItemGroup>
 </Project>

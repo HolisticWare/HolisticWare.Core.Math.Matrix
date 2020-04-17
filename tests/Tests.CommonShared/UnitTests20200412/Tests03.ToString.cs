@@ -89,11 +89,6 @@ namespace UnitTests.Core.Math.Core.Math.Matrix
 
             Console.WriteLine($" v = {sv}");
 
-            #if NUNIT || NUNIT_LITE
-            #elif XUNIT
-            #elif MSTEST
-            #endif
-
             return;
         }
 
@@ -103,7 +98,7 @@ namespace UnitTests.Core.Math.Core.Math.Matrix
             Vector<int> v1 = new Vector<int> { 2, 3, 5};
             Vector<int> v2 = new Vector<int> { 4, 4 };
 
-            #if NUNIT || NUNIT_LITE
+            #if NUNIT && NUNIT_LITE
             Assert.Throws<InvalidOperationException>
             (
                 () =>
@@ -114,9 +109,8 @@ namespace UnitTests.Core.Math.Core.Math.Matrix
                     Console.WriteLine($" v = {sv}");
                 }
             );
-            #elif XUNIT
-            #elif MSTEST
             #endif
+
 
             return;
         }
