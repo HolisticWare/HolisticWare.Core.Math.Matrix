@@ -83,6 +83,7 @@ namespace UnitTests.Core.Math.Core.Math.Matrix
             Vector<int> v1 = new Vector<int> { 2, 3 };
             Vector<int> v2 = new Vector<int> { 4, 4 };
 
+            // operator+ (sum algebraic)
             Vector<int> vr = v1 + v2; 
 
             string sv = vr.ToString();
@@ -108,6 +109,7 @@ namespace UnitTests.Core.Math.Core.Math.Matrix
             (
                 () =>
                 {
+                    // operator+ (sum algebraic)
                     Vector<int> vr = v1 + v2;
                     string sv = vr.ToString();
 
@@ -120,5 +122,48 @@ namespace UnitTests.Core.Math.Core.Math.Matrix
 
             return;
         }
+
+        [Test]
+        public void Vector_Operations_Algebra_Multiplication_01()
+        {
+            Vector<int> v1 = new Vector<int> { 2, 3 };
+            Vector<int> v2 = new Vector<int> { 4, 4 };
+
+            // operator* (sum algebraic)
+            Vector<int> vr = v1 * v2;
+
+            string sv = vr.ToString();
+
+            Console.WriteLine($" v = {sv}");
+
+            #if NUNIT || NUNIT_LITE
+            #elif XUNIT
+            #elif MSTEST
+            #endif
+
+            return;
+        }
+
+        [Test]
+        public void Vector_Norm_01()
+        {
+            Vector<int> v1 = new Vector<int> { 2, 3 };
+
+            // operator* (sum algebraic)
+            Vector<int> vr = v1.Norm();
+
+            string sv = vr.ToString();
+
+            Console.WriteLine($" v = {sv}");
+
+#if NUNIT || NUNIT_LITE
+#elif XUNIT
+#elif MSTEST
+#endif
+
+            return;
+        }
+
+
     }
 }
