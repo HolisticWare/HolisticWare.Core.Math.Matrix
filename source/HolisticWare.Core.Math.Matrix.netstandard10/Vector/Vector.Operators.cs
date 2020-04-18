@@ -8,21 +8,36 @@ namespace Core.Math.Matrix
     /// https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/operator-overloading#overloadable-operators
     public partial class Vector<T>
     {
+        public static Vector<int> operator +(Vector<T> lhs, int rhs)
+        {
+            Vector<int> result = new Vector<int>();
+
+            for (int i = 0; i < lhs.Data.Length; i++)
+            {
+                // int product = lhs.Data[i] * rhs;
+            }
+            return new Vector<int>();
+        }
+
         //-------------------------------------------------------------------------------------------------------------
         // + int
-        public static Vector<int> operator +(Vector<T> lhs, Vector<int> rhs) {
+        public static Vector<int> operator +(Vector<T> lhs, Vector<int> rhs)
+        {
             return lhs.Add(rhs);
         }
 
-        public Vector<int> Add(Vector<int> rhs) {
-            if (this.Length != rhs.Length) {
+        public Vector<int> Add(Vector<int> rhs)
+        {
+            if (this.Length != rhs.Length)
+            {
                 throw new System.InvalidOperationException("Vectors must be the same size!");
             }
 
             int length = this.Length;
             int[] tmp_data = new int[length];
 
-            for (int i = 0; i < length; i++) {
+            for (int i = 0; i < length; i++)
+            {
                 int? l = this.Data[i] as int?;
                 int r = rhs.Data[i];
                 tmp_data[i] = r + l.Value;
@@ -37,7 +52,7 @@ namespace Core.Math.Matrix
 
         //-------------------------------------------------------------------------------------------------------------
         // + uint
-        public static Vector<uint> operator+(Vector<T> lhs, Vector<uint> rhs)
+        public static Vector<uint> operator +(Vector<T> lhs, Vector<uint> rhs)
         {
             return lhs.Add(rhs);
         }
