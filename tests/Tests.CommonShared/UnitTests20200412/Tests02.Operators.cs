@@ -150,7 +150,7 @@ namespace UnitTests.Core.Math.Core.Math.Matrix
             Vector<int> v1 = new Vector<int> { 2, 3 };
 
             // operator* (sum algebraic)
-            Vector<int> vr = v1.Norm();
+            double vr = v1.Norm();
 
             string sv = vr.ToString();
 
