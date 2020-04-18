@@ -122,5 +122,10 @@ namespace Core.Math.Matrix
 
             return sb.ToString();
         }
+
+        public Vector<int> Norm()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
