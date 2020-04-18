@@ -123,9 +123,18 @@ namespace Core.Math.Matrix
             return sb.ToString();
         }
 
-        public Vector<int> Norm()
+        public double Norm()
         {
-            throw new NotImplementedException();
+            double sum = 0.0;
+
+            for(int i=0; i < this.Data.Length; i++)
+            {
+                //sum += this.Data[i] * this.Data[i];
+            }
+
+            double norm = System.Math.Sqrt(sum);
+
+            return norm;
         }
     }
 }
