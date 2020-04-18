@@ -130,7 +130,27 @@ namespace UnitTests.Core.Math.Core.Math.Matrix
             Vector<int> v2 = new Vector<int> { 4, 4 };
 
             // operator* (sum algebraic)
-            Vector<int> vr = v1 * v2;
+            Vector<int> vr = null; // v1 * v2;
+
+            string sv = vr.ToString();
+
+            Console.WriteLine($" v = {sv}");
+
+            #if NUNIT || NUNIT_LITE
+            #elif XUNIT
+            #elif MSTEST
+            #endif
+
+            return;
+        }
+
+        [Test]
+        public void Vector_Operations_Algebra_Scalar_Multiplication_01()
+        {
+            Vector<int> v1 = new Vector<int> { 2, 3 };
+
+            // operator* (sum algebraic)
+            Vector<int> vr = null; // v1 * 5;
 
             string sv = vr.ToString();
 
@@ -150,20 +170,51 @@ namespace UnitTests.Core.Math.Core.Math.Matrix
             Vector<int> v1 = new Vector<int> { 2, 3 };
 
             // operator* (sum algebraic)
-            double vr = v1.Norm();
+            double vr = 0.0; // v1.Norm<int>();
 
             string sv = vr.ToString();
 
             Console.WriteLine($" v = {sv}");
 
-#if NUNIT || NUNIT_LITE
-#elif XUNIT
-#elif MSTEST
-#endif
+            #if NUNIT || NUNIT_LITE
+            #elif XUNIT
+            #elif MSTEST
+            #endif
 
             return;
         }
 
 
+
+
+        public void DemoForGirls()
+        {
+            // TDD Test Driven Development
+
+            // User wants (user is mathematician)
+
+            Vector<double> vd = new Vector<double> { 1.0, 2.0, 3.0 };
+
+            /*
+                To implement
+            Vector<double> vd_1 = 5 * vd;
+
+            Vector<double> vd_2 = vd * 5;
+
+            Matrix<double, double> m = vd * vd;
+
+            double norm = vd.Norm();
+
+            Vector<double> v_unit = vd.UnitVector();
+
+            Vector<double> v_polar = vd.Polar();
+
+            int rank = vd.Rank();
+            int rank = vd.Rank;
+
+            */
+
+
+        }
     }
 }
