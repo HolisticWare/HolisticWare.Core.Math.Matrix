@@ -3,6 +3,8 @@ using System.Collections.Generic;
 
 namespace Core.Math.Matrix
 {
+    /// <see href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/object-and-collection-initializers"/>
+    /// <see href=""/>
     public partial class Vector<T>
         :
         IEnumerable<T> // needed for initializers
