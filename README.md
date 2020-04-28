@@ -5,9 +5,12 @@ Matrix operations and algebra
 
 *   @todo: `ToString()` as valid C#
 
-*   @todo: https://towardsdatascience.com/linear-algebra-for-deep-learning-f21d7e7d7f23
+## DONE
 
-Terms/definitions
+
+## WIP (Work in Progress)
+
+### Terms/definitions
 
 *   types
 
@@ -24,15 +27,31 @@ Terms/definitions
     *   `operator+`
     
         ```
-        Vector<int> result_01 = a + b;
+        Vector<int> result_01 = va + vb;
+        Matrix<int> result_01 = ma + mb;
         ```
 
     *   `operator-`
 
+        ```
+        Vector<int> result_01 = va - vb;
+        Matrix<int> result_01 = ma - mb;
+        ```
+        
     *   `operator*`
 
+        ```
+        Vector<int> result_01 = va * vb;
+        Matrix<int> result_01 = ma * mb;
+        ```
+        
     *   `operator/` ??
 
+        ```
+        Vector<int> result_01 = va / vb;
+        Matrix<int> result_01 = ma / mb;    // m * 1/mb = m * mb.Inverse();
+        ```
+        
 ## Work in Progress
 
 *   Constructors
