@@ -74,3 +74,6 @@ Matrix operations and algebra
 *   https://en.wikipedia.org/wiki/Tensor
 
 *   https://towardsdatascience.com/linear-algebra-for-deep-learning-f21d7e7d7f23
+
+*   https://en.wikipedia.org/wiki/Matrix_(mathematics)
+
