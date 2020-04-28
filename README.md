@@ -62,3 +62,15 @@ Matrix operations and algebra
 
 
 ## DONE
+
+## Links / References
+
+*   https://en.wikipedia.org/wiki/Euclidean_vector
+
+*   https://en.wikipedia.org/wiki/Vector_algebra
+
+*   https://en.wikipedia.org/wiki/Matrix_(mathematics)
+
+*   https://en.wikipedia.org/wiki/Tensor
+
+*   https://towardsdatascience.com/linear-algebra-for-deep-learning-f21d7e7d7f23
