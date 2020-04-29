@@ -17,8 +17,19 @@ Matrix operations and algebra
     *   Scalar
 
     *   Vector
+        -   Row vectors
+        -   Column vectors
 
     *   Matrix
+        -   Matrix size
+        -   Submatrix
+        -   Square matrix
+        -   Triangular matrix
+        -   Diagonal matrix
+        -   Scalar matrix
+        -   Identity matrix
+        -   Symmetric matrix
+        -   Inverse matrix
 
 *   Conversion Operators
     
@@ -50,7 +61,30 @@ Matrix operations and algebra
         ```
         Vector<int> result_01 = va / vb;
         Matrix<int> result_01 = ma / mb;    // m * 1/mb = m * mb.Inverse();
-        ```
+
+    *   `Matrix-Scalar Operations`
+
+    *   `Matrix-Vector Multiplication`
+
+    *   `Matrix-Matrix Multiplication`
+
+    *   `Inverse`
+
+    *   `Transposition`
+
+    *   `Trace`
+
+    *   `Determinant`
+
+    *   `Vector norm`
+
+    *   `Normalized vector`
+
+    *   `Euclidean distance`
+
+
+
+
         
 ## Work in Progress
 
@@ -77,3 +111,4 @@ Matrix operations and algebra
 
 *   https://en.wikipedia.org/wiki/Matrix_(mathematics)
 
+**https://www.extremeoptimization.com/Documentation/Default.asp**
