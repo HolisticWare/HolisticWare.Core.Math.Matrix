@@ -75,66 +75,118 @@ using Core.Math.Matrix;
 
 namespace UnitTests.Core.Math.Core.Math.Matrix
 {
+    [TestClass] // for MSTest - NUnit [TestFixture] and XUnit not needed
     public partial class UnitTests20200412
     {
+
         [Test]
-        public void Vector_ToString_CSharp()
+        public void Test_Constructors_01()
         {
-            Vector<int> v1 = new Vector<int> { 2, 3 };
-            Vector<int> v2 = new Vector<int> { 4, 4 };
+            // 
+            Matrix<int> m = new Matrix<int>(2, 3);
 
-            Vector<int> vr = v1 + v2; 
+            m[1, 1] = 1;
+            m[1, 2] = 9;
+            m[1, 3] = -13;
+            m[2, 1] = 20;
+            m[2, 2] = 5;
+            m[2, 3] = -6;
 
-            string sv = vr.ToString();
-
-            Console.WriteLine($" v = {sv}");
-
-            #if NUNIT || NUNIT_LITE
-            #elif XUNIT
+            #if NUNIT
+            Assert.AreEqual(m[1, 1], 1);
+            Assert.AreEqual(m[1, 2], 9);
+            Assert.AreEqual(m[1, 3], -13);
+            Assert.AreEqual(m[2, 1], 20);
+            Assert.AreEqual(m[2, 2], 5);
+            Assert.AreEqual(m[2, 3], -6);
             #elif MSTEST
+            Assert.AreEqual(m[1, 1], 1);
+            Assert.AreEqual(m[1, 2], 9);
+            Assert.AreEqual(m[1, 3], -13);
+            Assert.AreEqual(m[2, 1], 20);
+            Assert.AreEqual(m[2, 2], 5);
+            Assert.AreEqual(m[2, 3], -6);
+            #elif XUNIT
+            Assert.Equal(m[1, 1], 1);
+            Assert.Equal(m[1, 2], 9);
+            Assert.Equal(m[1, 3], -13);
+            Assert.Equal(m[2, 1], 20);
+            Assert.Equal(m[2, 2], 5);
+            Assert.Equal(m[2, 3], -6);
+            #endif
+
+            return;
+        }
+
+
+        [Test]
+        public void Test_Constructors_02()
+        {
+            // 
+            Matrix<double> m = new Matrix<double>(3, 2);
+
+            m[1, 1] = -1.3;
+            m[1, 2] = 0.6;
+            m[2, 1] = 20.5;
+            m[2, 2] = 5.5;
+            m[3, 1] = 9.7;
+            m[3, 2] = -6.2;
+
+            #if NUNIT
+            Assert.AreEqual(m[1, 1], -1.3);
+            Assert.AreEqual(m[1, 2], 0.6);
+            Assert.AreEqual(m[2, 1], 20.5);
+            Assert.AreEqual(m[2, 2], 5.5);
+            Assert.AreEqual(m[3, 1], 9.7);
+            Assert.AreEqual(m[3, 2], -6.2);
+            #elif MSTEST
+            Assert.AreEqual(m[1, 1], -1.3);
+            Assert.AreEqual(m[1, 2], 0.6);
+            Assert.AreEqual(m[2, 1], 20.5);
+            Assert.AreEqual(m[2, 2], 5.5);
+            Assert.AreEqual(m[3, 1], 9.7);
+            Assert.AreEqual(m[3, 2], -6.2);
+            #elif XUNIT
+            Assert.Equal(m[1, 1], -1.3);
+            Assert.Equal(m[1, 2], 0.6);
+            Assert.Equal(m[2, 1], 20.5);
+            Assert.Equal(m[2, 2], 5.5);
+            Assert.Equal(m[3, 1], 9.7);
+            Assert.Equal(m[3, 2], -6.2);
             #endif
 
             return;
         }
 
         [Test]
-        public void Vector_ToString_CSV()
+        public void Test_Operators_Equality_01()
         {
-            Vector<int> v1 = new Vector<int> { 2, 3 };
-            Vector<int> v2 = new Vector<int> { 4, 4 };
+            // 
+            Matrix<double> lhs = new Matrix<double>(3, 2);
 
-            Vector<int> vr = v1 + v2;
+            lhs[1, 1] = -1.3;
+            lhs[1, 2] = 0.6;
+            lhs[2, 1] = 20.5;
+            lhs[2, 2] = 5.5;
+            lhs[3, 1] = 9.7;
+            lhs[3, 2] = -6.2;
 
-            string sv = vr.ToString();
+            Matrix<double> rhs = new Matrix<double>(3, 2);
 
-            Console.WriteLine($" v = {sv}");
+            rhs[1, 1] = -1.3;
+            rhs[1, 2] = 0.6;
+            rhs[2, 1] = 20.5;
+            rhs[2, 2] = 5.5;
+            rhs[3, 1] = 9.7;
+            rhs[3, 2] = -6.2;
 
-            #if NUNIT || NUNIT_LITE
-            #elif XUNIT
+            #if NUNIT
+            Assert.IsTrue(lhs == rhs);
             #elif MSTEST
-            #endif
-
-            return;
-        }
-
-        [Test]
-        public void Vector_ToString_JSON()
-        {
-            Vector<int> v1 = new Vector<int> { 2, 3 };
-            Vector<int> v2 = new Vector<int> { 4, 4 };
-
-            Vector<int> vr = v1 + v2;
-
-            string sv = vr.ToString();
-
-            Console.WriteLine($" v = {sv}");
-
-            #if NUNIT || NUNIT_LITE
+            Assert.IsTrue(lhs == rhs);
             #elif XUNIT
-            #elif MSTEST
+            Assert.True(lhs == rhs);
             #endif
-
-            return;
         }
     }
 }
