@@ -9,6 +9,9 @@
     <Import_RootNamespace>Tests.CommonShared</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)Tests20200412\Test_Wikipedia.Constructors.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests20200412\Test_Wikipedia_Matrix_Mathematics_Generic.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)Tests20200412\Test_Wikipedia_Matrix_Mathematics_TytpeInfo.cs" />
   </ItemGroup>
 </Project>
