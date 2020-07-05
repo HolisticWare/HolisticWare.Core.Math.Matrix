@@ -111,4 +111,14 @@ Matrix operations and algebra
 
 *   https://en.wikipedia.org/wiki/Matrix_(mathematics)
 
-**https://www.extremeoptimization.com/Documentation/Default.asp**
+*   https://www.extremeoptimization.com/Documentation/Default.asp
+
+*   System.Numerics
+
+    *   Proposal for more System.Numerics APIs #35980
+    
+        *   https://github.com/dotnet/runtime/issues/35980
+
+    *   Add Matrix3x3 #16226
+
+        *   https://github.com/dotnet/runtime/issues/16226
