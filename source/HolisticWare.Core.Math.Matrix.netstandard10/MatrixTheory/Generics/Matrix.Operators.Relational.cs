@@ -1,21 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Core.Math.Matrix
+namespace Core.Math.MatrixTheory.Generics
 {
     /// <summary>
     /// 
     /// </summary>
     /// <see cref="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/arrays/multidimensional-arrays"/>
     /// <typeparam name="T"></typeparam>
-    public partial struct Matrix<T>
-            where T : IEquatable<T>
+    public partial class Matrix<T>
     {
-        public static bool operator ==(Matrix<T> lhs, Matrix<T> rhs)
+        //----------------------------------------------------------------------------------------
+        public static
+                bool
+                operator ==
+                (
+                    Matrix<T> lhs,
+                    Matrix<T> rhs
+                )
         {
             if (lhs == null || rhs == null)
             {
-                throw new Exception("");
+                throw new Exception("Cannot compare null");
             }
 
             int lhs_rc = lhs.CountRows;
@@ -23,14 +29,9 @@ namespace Core.Math.Matrix
             int lhs_cc = lhs.CountColumns;
             int rhs_cc = lhs.CountColumns;
 
-            if( lhs_rc != rhs_rc || lhs_cc != rhs_cc )
-            {
-                throw new Exception();
-            }
-
             if (lhs_rc != rhs_rc || lhs_cc != rhs_cc)
             {
-                throw new Exception();
+                throw new Exception("Matrices must be of the same size");
             }
 
             bool is_equal = false;
@@ -39,7 +40,7 @@ namespace Core.Math.Matrix
             {
                 for (int c = 1; c <= lhs.CountColumns; c++)
                 {
-                    if ( EqualityComparer<T>.Default.Equals(lhs[r, c], rhs[r, c]) )
+                    if (EqualityComparer<T>.Default.Equals(lhs[r, c], rhs[r, c]))
                     {
                         is_equal = true;
                     }
@@ -58,20 +59,7 @@ namespace Core.Math.Matrix
         {
             return !(lhs == rhs);
         }
-
-        public static Matrix<T> operator +(Matrix<T> m)
-        {
-            Matrix<T> m_new = new Matrix<T>(m.CountRows, m.CountColumns);
-
-            return m_new;
-        }
-
-        public static Matrix<T> operator -(Matrix<T> m)
-        {
-            Matrix<T> m_new = new Matrix<T>(m.CountRows, m.CountColumns);
-
-            return m_new;
-        }
+        //----------------------------------------------------------------------------------------
 
     }
-}
+ }
