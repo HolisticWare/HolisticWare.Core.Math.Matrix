@@ -30,7 +30,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests.NUnit", "netstand
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolisticWare.Core.Math.Matrix.netstandard10", "..\..\..\source\HolisticWare.Core.Math.Matrix.netstandard10\HolisticWare.Core.Math.Matrix.netstandard10.csproj", "{0CB9BBF6-1485-4E2B-9724-311E5523A76D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests.NUnit.netcore", "netstandard10\UnitTests.NUnit.netcore\UnitTests.NUnit.netcore.csproj", "{6BB437A5-D81C-4473-A5E7-15BDAAC61BA4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests.NUnit", "netstandard10\UnitTests.NUnit\UnitTests.NUnit.csproj", "{6BB437A5-D81C-4473-A5E7-15BDAAC61BA4}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
