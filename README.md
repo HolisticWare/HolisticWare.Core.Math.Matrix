@@ -99,16 +99,40 @@ Matrix operations and algebra
 
 ## Links / References
 
-*   https://en.wikipedia.org/wiki/Euclidean_vector
+*   samples
 
-*   https://en.wikipedia.org/wiki/Vector_algebra
+    *   https://www.mathsisfun.com/algebra/matrix-introduction.html
+    
+    *   https://www.wolframalpha.com/examples/mathematics/algebra/matrices/
+    
+    *   https://www.analyzemath.com/linear-algebra/matrices/matrices-examples-and-questions-with-solutions.html
+    
+    *   http://www.maths.surrey.ac.uk/explore/emmaspages/option1.html
+    
+    *   https://www.statisticshowto.com/matrices-and-matrix-algebra/
+    
+    *   https://www.intmath.com/matrices-determinants/matrix-multiplication-examples.php
+    
+    *   https://www.onlinemathlearning.com/matrices-types.html
+    
+    *   https://www.studypug.com/algebra-help/notation-of-matrices
+    
+    *   https://brilliant.org/wiki/matrices/
+    
+    *   https://www.ixl.com/math/algebra-2/multiply-two-matrices
+    
+*   theory
 
-*   https://en.wikipedia.org/wiki/Matrix_(mathematics)
+    *   https://en.wikipedia.org/wiki/Euclidean_vector
 
-*   https://en.wikipedia.org/wiki/Tensor
+    *   https://en.wikipedia.org/wiki/Vector_algebra
 
-*   https://towardsdatascience.com/linear-algebra-for-deep-learning-f21d7e7d7f23
+    *   https://en.wikipedia.org/wiki/Matrix_(mathematics)
 
-*   https://en.wikipedia.org/wiki/Matrix_(mathematics)
+    *   https://en.wikipedia.org/wiki/Tensor
 
-**https://www.extremeoptimization.com/Documentation/Default.asp**
+    *   https://towardsdatascience.com/linear-algebra-for-deep-learning-f21d7e7d7f23
+
+    *   https://en.wikipedia.org/wiki/Matrix_(mathematics)
+
+*   https://www.extremeoptimization.com/Documentation/Default.asp
