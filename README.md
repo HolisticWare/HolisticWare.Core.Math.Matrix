@@ -136,3 +136,6 @@ Matrix operations and algebra
     *   https://en.wikipedia.org/wiki/Matrix_(mathematics)
 
 *   https://www.extremeoptimization.com/Documentation/Default.asp
+
+*   https://en.wikipedia.org/wiki/Mathematical_operators_and_symbols_in_Unicode
+
