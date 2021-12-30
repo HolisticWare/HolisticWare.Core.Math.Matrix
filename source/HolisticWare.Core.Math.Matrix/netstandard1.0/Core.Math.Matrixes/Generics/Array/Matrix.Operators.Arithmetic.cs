@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Core.Math.MatrixTheory.Generics
+namespace Core.Math.Matrixes.Generics.ImplementationArray
 {
     /// <summary>
     /// 
