@@ -8,7 +8,7 @@ namespace Core.Math.Matrixes.Generics.ImplementationMemory
     /// <see cref="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/arrays/multidimensional-arrays"/>
     /// <see cref="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/operator-overloading"/>
     /// <typeparam name="T"></typeparam>
-    public partial class Matrix<T> : Core.Math.Matrixes.MatrixBase
+    public partial class Matrix<T> : System.INumber<T>
     {
         public Matrix
                     (

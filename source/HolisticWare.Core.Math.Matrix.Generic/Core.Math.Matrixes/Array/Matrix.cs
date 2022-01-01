@@ -1,62 +1,62 @@
 ﻿using System;
 
-namespace Core.Math.Matrixes.Generics.ImplementationMemory
+namespace Core.Math.Matrixes.Generics.ImplementationArray
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     /// <see cref="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/arrays/multidimensional-arrays"/>
     /// <see cref="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/operator-overloading"/>
     /// <typeparam name="T"></typeparam>
-    public partial class Matrix<T> : Core.Math.Matrixes.MatrixBase
+    public class Matrix<T> where T : System.INumber<T>
     {
-        public Matrix
-                    (
-                        int count_rows = 1,
-                        int count_columns = 1
-                    )
+        T[,] vals;
+
+        public int Rows { get; }
+        public int Columns { get; }
+        public Matrix(int rows, int columns)
         {
-            this.CountRows = count_rows;
-            this.CountColumns = count_columns;
-
-            T[] data_array = new T[count_rows * count_columns];
-            this.data = new Memory<T>(data_array, 0, count_rows * count_columns - 1);
-
-            return;
+            Rows = rows; this.Columns = columns;
+            vals = new T[rows, columns];
         }
 
-        private static int AdditionInt(int lhs, int rhs)
+        public Matrix(int rows, int columns, params T[] values)
         {
-            return lhs + rhs;
+            Rows = rows; this.Columns = columns;
+            vals = new T[rows, columns];
+            for (var i = 0; i < Rows; ++i)
+                for (var j = 0; j < this.Columns; ++j)
+                    vals[i, j] = values[i * this.Columns + j];
+
         }
 
-        public Matrix
-                    (
-                        Matrix<T> m
-                    )
+        public T this[int row, int column]
         {
-            int count_rows = m.CountRows;
-            int count_columns = m.CountColumns;
+            get => vals[row, column];
+            set => vals[row, column] = value;
+        }
 
-            this.IsZeroBased = m.IsZeroBased;
-            this.CountRows = count_rows;
-            this.CountColumns = count_columns;
+        public static Vector<T> operator *(Matrix<T> m, Vector<T> v)
+        {
+            Trace.Assert(m.Columns == v.Dimension);
+            var v2 = new Vector<T>(v.Dimension);
+            for (var i = 0; i < m.Rows; ++i)
+                for (var j = 0; j < m.Columns; ++j)
+                    v2[i] += m[i, j] * v[j];
+            return v2;
+        }
 
-            T[] data_array = new T[count_rows * count_columns];
-            this.data = new Memory<T>(data_array, 0, count_rows * count_columns - 1);
-
-            int index;
-
-            for (int r = 1; r <= count_rows; r++)
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            for (var i = 0; i < Rows; ++i)
             {
-                for (int c = 1; c <= count_columns; c++)
-                {
-                    index = (r - 1) * CountColumns + (c - 1);
-                    data.Span[index] = m[r, c];
-                }
+                sb.Append("[");
+                for (var j = 0; j < Columns; ++j)
+                    sb.Append($"{vals[i, j]},");
+                sb.AppendLine("]");
             }
-
-            return;
+            return sb.ToString();
         }
 
     }
