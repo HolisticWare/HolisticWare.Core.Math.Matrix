@@ -71,9 +71,9 @@ using System.IO;
 using System.Reflection;
 using System.Collections.ObjectModel;
 
-using Core.Math.MatrixTheory.Generics;
+using Core.Math.Matrixes.Generics.ImplementationArray;
 
-namespace UnitTests.Core.Math.MatrixTheory
+namespace UnitTests.Core.Math.Matrixes
 {
     [TestClass] // for MSTest - NUnit [TestFixture] and XUnit not needed
     public partial class Test_Wikipedia_Matrix_Mathematics_Generic
@@ -200,7 +200,7 @@ namespace UnitTests.Core.Math.MatrixTheory
         [Test]
         public void Test_Operators_Equality_double_01()
         {
-            // 
+            //
             Matrix<double> lhs = new Matrix<double>(3, 2);
 
             lhs[1, 1] = -1.3;
@@ -323,7 +323,7 @@ namespace UnitTests.Core.Math.MatrixTheory
         //[Test]
         //public void Test_Operators_Sign_Minus_01()
         //{
-        //    // 
+        //    //
         //    Matrix<double> rhs = new Matrix<double>(3, 2);
 
         //    rhs[1, 1] = -1.3;
