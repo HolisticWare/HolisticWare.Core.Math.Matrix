@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Core.Math.MatrixTheory.Generics
+namespace Core.Math.Matrixes.Generics.ImplementationMemory
 {
     /// <summary>
     /// 
@@ -8,7 +8,7 @@ namespace Core.Math.MatrixTheory.Generics
     /// <see cref="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/arrays/multidimensional-arrays"/>
     /// <see cref="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/operator-overloading"/>
     /// <typeparam name="T"></typeparam>
-    public partial class Matrix<T> : MatrixBase
+    public partial class Matrix<T> : System.INumber<T>
     {
         public Matrix
                     (
@@ -18,9 +18,9 @@ namespace Core.Math.MatrixTheory.Generics
         {
             this.CountRows = count_rows;
             this.CountColumns = count_columns;
-            this.IsZeroBased = false;
 
-            this.data = new T[count_rows * count_columns];
+            T[] data_array = new T[count_rows * count_columns];
+            this.data = new Memory<T>(data_array, 0, count_rows * count_columns - 1);
 
             return;
         }
@@ -42,7 +42,8 @@ namespace Core.Math.MatrixTheory.Generics
             this.CountRows = count_rows;
             this.CountColumns = count_columns;
 
-            this.data = new T[count_rows * count_columns];
+            T[] data_array = new T[count_rows * count_columns];
+            this.data = new Memory<T>(data_array, 0, count_rows * count_columns - 1);
 
             int index;
 
@@ -51,52 +52,11 @@ namespace Core.Math.MatrixTheory.Generics
                 for (int c = 1; c <= count_columns; c++)
                 {
                     index = (r - 1) * CountColumns + (c - 1);
-                    data[index] = m[r, c];
+                    data.Span[index] = m[r, c];
                 }
             }
 
             return;
-        }
-
-        /// <summary>
-        /// data stored
-        /// multidimensional array simulated through singledimensional array
-        /// </summary>
-        T[] data;
-
-        // https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/indexers/
-        public T this[int row, int column]
-        {
-            get
-            {
-                int index = (row - 1) * CountColumns + (column - 1);
-
-                return data[index];
-            }
-            set
-            {
-                int index = (row - 1) * CountColumns + (column - 1);
-
-                data[index] = value;
-            }
-        }
-
-        public int CountRows
-        {
-            get;
-            set;
-        }
-
-        public int CountColumns
-        {
-            get;
-            set;
-        }
-
-        public bool IsZeroBased
-        {
-            get;
-            set;
         }
 
     }
