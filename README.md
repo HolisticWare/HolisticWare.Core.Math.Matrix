@@ -173,11 +173,14 @@ Matrix operations and algebra
 
     *   https://en.wikipedia.org/wiki/Tensor
 
-    *   https://towardsdatascience.com/linear-algebra-for-deep-learning-f21d7e7d7f23
-
-    *   https://en.wikipedia.org/wiki/Matrix_(mathematics)
-
 *   https://www.extremeoptimization.com/Documentation/Default.asp
 
-*   https://en.wikipedia.org/wiki/Mathematical_operators_and_symbols_in_Unicode
+*   System.Numerics
 
+    *   Proposal for more System.Numerics APIs #35980
+    
+        *   https://github.com/dotnet/runtime/issues/35980
+
+    *   Add Matrix3x3 #16226
+
+        *   https://github.com/dotnet/runtime/issues/16226
