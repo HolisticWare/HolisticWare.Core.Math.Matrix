@@ -2,12 +2,22 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <EnablePreviewFeatures>true</EnablePreviewFeatures>
+    <EnablePreviewFeatures>True</EnablePreviewFeatures>
     <LangVersion>preview</LangVersion>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net6.0'">
+    <EnablePreviewFeatures>True</EnablePreviewFeatures>
+    <GenerateRequiresPreviewFeaturesAttribute>False</GenerateRequiresPreviewFeaturesAttribute>
+    <DefineConstants>USE_GENERIC_MATH_FEATURE;$(DefineConstants)</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
     <PackageReference Include="System.Runtime.Experimental" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="6.0.0" />
     <PackageReference Include="Microsoft.CodeAnalysis.BannedApiAnalyzers" Version="3.3.3" />
     <PackageReference Include="Microsoft.CodeAnalysis.PublicApiAnalyzers" Version="3.3.3" />
@@ -17,13 +27,4 @@
     <PackageReference Include="AsyncFixer" Version="1.5.1" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Remove="Microsoft.CodeAnalysis.NetAnalyzers" />
-    <None Remove="Microsoft.CodeAnalysis.BannedApiAnalyzers" />
-    <None Remove="Microsoft.CodeAnalysis.PublicApiAnalyzers" />
-    <None Remove="Roslynator.Analyzers" />
-    <None Remove="Roslynator.CodeAnalysis.Analyzers" />
-    <None Remove="Roslynator.Formatting.Analyzers" />
-    <None Remove="AsyncFixer" />
-  </ItemGroup>
 </Project>

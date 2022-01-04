@@ -1,20 +1,27 @@
 ﻿using System;
 
-namespace Core.Math.Matrixes.Generics.ImplementationMemory
+namespace Core.Math.Matrixes.Generics.Implementation.Memory
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     /// <see cref="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/arrays/multidimensional-arrays"/>
     /// <see cref="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/operator-overloading"/>
     /// <typeparam name="T"></typeparam>
-    public partial class Matrix<T> : System.INumber<T>
+    public partial class Matrix<T>
+        where T : System.INumber<T>
     {
-        public Matrix
-                    (
-                        int count_rows = 1,
-                        int count_columns = 1
-                    )
+        /// <summary>
+        /// Matrix constructor (ctor)
+        /// </summary>
+        /// <param name="count_rows"></param>
+        /// <param name="count_columns"></param>
+        public
+                                        Matrix
+                                            (
+                                                int count_rows = 1,
+                                                int count_columns = 1
+                                            )
         {
             this.CountRows = count_rows;
             this.CountColumns = count_columns;
@@ -25,20 +32,19 @@ namespace Core.Math.Matrixes.Generics.ImplementationMemory
             return;
         }
 
-        private static int AdditionInt(int lhs, int rhs)
-        {
-            return lhs + rhs;
-        }
-
-        public Matrix
-                    (
-                        Matrix<T> m
-                    )
+        /// <summary>
+        /// Matrix copy constructor (cctor)
+        /// </summary>
+        /// <param name="m"></param>
+        public
+                                        Matrix
+                                            (
+                                                Matrix<T> m
+                                            )
         {
             int count_rows = m.CountRows;
             int count_columns = m.CountColumns;
 
-            this.IsZeroBased = m.IsZeroBased;
             this.CountRows = count_rows;
             this.CountColumns = count_columns;
 
