@@ -34,6 +34,11 @@ Matrix operations and algebra
 
 *   https://dunnhq.com/posts/2021/generic-math/
 
+*   libraries
+
+    *   https://github.com/samtrion/netevolve-guard/tree/main/src/NetEvolve.Guard.Experimental
+    
+
 
 *   http://core.loyc.net/math/maths
 
