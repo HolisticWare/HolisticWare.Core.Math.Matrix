@@ -28,7 +28,7 @@ Task("nuget-restore-externals")
                         file, 
                         new NuGetRestoreSettings 
                         { 
-                            PackagesDirectory = file.GetDirectory()
+                            PackagesDirectory = $"{file.GetDirectory()}/packages"
                         } 
                     );
             }
@@ -42,7 +42,7 @@ Task("nuget-restore-externals")
                         file, 
                         new NuGetRestoreSettings 
                         { 
-                            PackagesDirectory = file.GetDirectory()
+                            PackagesDirectory = $"{file.GetDirectory()}/packages"
                         } 
                     );
             }
@@ -56,7 +56,7 @@ Task("nuget-restore-externals")
                         file, 
                         new NuGetRestoreSettings 
                         { 
-                            PackagesDirectory = file.GetDirectory()
+                            PackagesDirectory = $"{file.GetDirectory()}/packages"
                         } 
                     );
             }
@@ -70,7 +70,7 @@ Task("nuget-restore-externals")
                         file, 
                         new NuGetRestoreSettings 
                         { 
-                            PackagesDirectory = file.GetDirectory()
+                            PackagesDirectory = $"{file.GetDirectory()}/packages"
                         } 
                     );
             }
@@ -94,7 +94,7 @@ Task("nuget-restore-libs")
                         file, 
                         new NuGetRestoreSettings 
                         { 
-                            PackagesDirectory = file.GetDirectory()
+                            PackagesDirectory = $"{file.GetDirectory()}/packages"
                         } 
                     );
             }
@@ -108,7 +108,7 @@ Task("nuget-restore-libs")
                         file, 
                         new NuGetRestoreSettings 
                         { 
-                            PackagesDirectory = file.GetDirectory()
+                            PackagesDirectory = $"{file.GetDirectory()}/packages"
                         } 
                     );
             }
@@ -132,7 +132,7 @@ Task("nuget-restore-samples")
                         file, 
                         new NuGetRestoreSettings 
                         { 
-                            PackagesDirectory = file.GetDirectory()
+                            PackagesDirectory = $"{file.GetDirectory()}/packages"
                         } 
                     );
             }
@@ -146,7 +146,7 @@ Task("nuget-restore-samples")
                         file, 
                         new NuGetRestoreSettings 
                         { 
-                            PackagesDirectory = file.GetDirectory()
+                            PackagesDirectory = $"{file.GetDirectory()}/packages"
                         } 
                     );
             }
@@ -171,7 +171,7 @@ Task("nuget-restore-tests")
                         file, 
                         new NuGetRestoreSettings 
                         { 
-                            PackagesDirectory = file.GetDirectory()
+                            PackagesDirectory = $"{file.GetDirectory()}/packages"
                         } 
                     );
             }
@@ -185,7 +185,7 @@ Task("nuget-restore-tests")
                         file, 
                         new NuGetRestoreSettings 
                         { 
-                            PackagesDirectory = file.GetDirectory()
+                            PackagesDirectory = $"{file.GetDirectory()}/packages"
                         } 
                     );
             }
