@@ -103,13 +103,17 @@ string[] clean_folder_patterns = new string[]
     "./externals/",
     "./output/",
     "./**/.vs/",
+    "./**/.mfractor/",
     "./source/**/bin/",
     "./source/**/obj/",
+    "./source/**/packages/",
     "./samples/**/bin/",
     "./samples/**/obj/",
+    "./samples/**/packages/",
     "./samples/**/tools/",
     "./tests/**/bin/",
     "./tests/**/obj/",
+    "./tests/**/packages/",
 };
 
 string[] clean_file_patterns = new string[]
