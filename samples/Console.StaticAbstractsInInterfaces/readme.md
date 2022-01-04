@@ -1,5 +1,6 @@
 # Readme
 
+*   https://github.com/dotnet/runtime/issues/62840
 
 ```
 dotnet build Console.StaticAbstractsInInterfaces/Console.StaticAbstractsInInterfaces.csproj /v:diag
