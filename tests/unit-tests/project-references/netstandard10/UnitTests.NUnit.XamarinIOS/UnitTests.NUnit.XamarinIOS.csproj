@@ -130,9 +130,9 @@
     <Compile Include="UnitTestAppDelegate.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\source\HolisticWare.Core.Math.Matrix\HolisticWare.Core.Math.Matrix.csproj">
-      <Project>{22CF20A9-6B15-45D7-8E58-C13905D7EDBB}</Project>
-      <Name>HolisticWare.Core.Math.Matrix</Name>
+    <ProjectReference Include="..\..\..\..\..\source\HolisticWare.Core.Math.Matrixes\HolisticWare.Core.Math.Matrixes.csproj">
+      <Project>{B76F52CA-35F4-4F00-8020-613FF2954F73}</Project>
+      <Name>HolisticWare.Core.Math.Matrixes</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="..\..\..\UnitTests.Common.Utils.Shared\UnitTests.Common.Utils.Shared.projitems" Label="Shared" Condition="Exists('..\..\..\UnitTests.Common.Utils.Shared\UnitTests.Common.Utils.Shared.projitems')" />

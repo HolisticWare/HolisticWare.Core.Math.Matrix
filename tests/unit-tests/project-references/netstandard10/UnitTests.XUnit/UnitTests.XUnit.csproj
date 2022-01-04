@@ -1,10 +1,19 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFrameworks>netcoreapp3.1;net5.0;net6.0</TargetFrameworks>
     <LangVersion>Latest</LangVersion>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net6.0'">
+    <EnablePreviewFeatures>True</EnablePreviewFeatures>
+    <LangVersion>preview</LangVersion>
+    <Nullable>enable</Nullable>
+    <GenerateRequiresPreviewFeaturesAttribute>False</GenerateRequiresPreviewFeaturesAttribute>
+    <DefineConstants>USE_GENERIC_MATH_FEATURE;$(DefineConstants)</DefineConstants>
+  </PropertyGroup>
+
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DefineConstants>TRACE;XUNIT;NETCOREAPP2_0;DEBUG;NETCOREAPP;NETCOREAPP2_1</DefineConstants>
@@ -26,12 +35,16 @@
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
+
   <ItemGroup>
-    <None Remove=".DS_Store" />
+    <ProjectReference Include="..\..\..\..\..\source\HolisticWare.Core.Math.Matrixes\HolisticWare.Core.Math.Matrixes.csproj" />
+    <ProjectReference Include="..\..\..\..\..\source\HolisticWare.Core.Math.Matrixes\HolisticWare.Core.Math.Matrixes.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\source\HolisticWare.Core.Math.Matrix\HolisticWare.Core.Math.Matrix.csproj" />
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
+    <ProjectReference Include="..\..\..\..\..\source\HolisticWare.Core.Math.Matrixes.Generic\HolisticWare.Core.Math.Matrixes.Generic.csproj" />
   </ItemGroup>
+
   <Choose>
     <When Condition="! exists('..\..\..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10.csproj')">
       <!-- nuget packages (dll) refs -->
