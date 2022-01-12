@@ -64,7 +64,7 @@ Running Cake to Build targets
 //  Cake.CoreCLR add to ./tools/ folder for debugging
 #tool   nuget:?package=Cake.CoreCLR
 
-#addin nuget:?package=Cake.FileHelpers
+#addin nuget:?package=Cake.FileHelpers&version=4.0.1
 
 
 //---------------------------------------------------------------------------------------
