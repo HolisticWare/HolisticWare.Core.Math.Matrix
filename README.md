@@ -50,7 +50,39 @@ Matrix operations and algebra
 
 *   http://www.shujaat.net/2012/05/c-generics-arithmetic-operators.html
 
+### GPU
 
+*   ComputeSharp
+
+    *   https://github.com/SingleAccretion/ComputeSharp
+
+    *   DirectX
+
+*   Hybridizer
+
+    *   https://developer.nvidia.com/blog/hybridizer-csharp/
+
+*   ILGPU
+
+    *   https://www.ilgpu.net/
+
+    *   https://github.com/m4rs-mt/ILGPU/
+
+    *   https://github.com/m4rs-mt/ILGPU/tree/master/Samples
+
+*   Alea GPU
+
+    *   https://learn.microsoft.com/en-us/shows/seth-juarez/radically-simplified-gpu-programming-c
+
+*   https://stackoverflow.com/questions/375011/utilizing-the-gpu-with-c-sharp
+
+*   https://stackoverflow.com/questions/4119876/run-c-sharp-code-on-gpu
+
+https://stackoverflow.com/questions/46392132/c-sharp-opencl-gpu-implementation-for-double-array-math
+
+https://stackoverflow.com/questions/1249892/c-perform-operations-on-gpu-not-cpu-calculate-pi
+
+https://stackoverflow.com/questions/51455603/process-a-heavy-function-by-gpu-in-c-sharp
 
 ## DONE
 
